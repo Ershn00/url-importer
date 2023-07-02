@@ -14,7 +14,7 @@ class Url
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: Types::TEXT, options: ["charset" => "utf8mb4"])]
     private ?string $url = null;
 
     public function getId(): ?int
