@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}URL Importer{% endblock %}
+
+{% block body %}
+    <h1>URL Importer</h1>
+
+    {% for flashMessage in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="mb-10">&nbsp;</div>
+
+    {{ form_start(form) }}
+    {{ form_row(form.file) }}
+    <button type="submit">Import</button>
+    {{ form_end(form) }}
+{% endblock %}
