@@ -21,9 +21,9 @@ class UrlImportController extends AbstractController
             $csvFile = $form->get('file')->getData();
             $urls = $this->parseCSVFile($csvFile);
 
-            $urlImporter->importURLs($urls);
+            $importedCount = $urlImporter->importURLs($urls);
 
-            $this->addFlash('success', 'URLs imported successfully.');
+            $this->addFlash('success', sprintf('Imported %d URLs.', $importedCount));
 
             return $this->redirectToRoute('app_url_import');
         }
