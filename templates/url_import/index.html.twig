@@ -13,8 +13,11 @@
 
     <div class="mb-10">&nbsp;</div>
 
-    {{ form_start(form) }}
-    {{ form_row(form.file) }}
-    <button type="submit">Import</button>
+    {{ form_start(form, { 'attr': { 'class': 'container' } }) }}
+    <div class="form-group">
+        {{ form_label(form.file, 'Choose File:', { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(form.file, { 'attr': { 'class': 'form-control-file' } }) }}
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
     {{ form_end(form) }}
 {% endblock %}
